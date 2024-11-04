@@ -1,6 +1,6 @@
 import axios from 'axios'
 
- const baseURL = 'http://localhost:3000'
+ const baseURL = 'https://history-backend-2.onrender.com'
 
 const api = axios.create({
     baseURL: baseURL,
