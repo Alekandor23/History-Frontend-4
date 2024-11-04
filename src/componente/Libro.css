@@ -1,0 +1,503 @@
+/*NAVBAR  SECUNDARIO Y LA FLECHA DE  ATRAS*/
+/* Contenedor principal para flecha, portada y botones */
+.contenedor-flecha-navbar2 {
+  display: flex;
+  flex-direction: column; /* Colocamos los elementos en columna */
+  align-items: flex-start; /* Alineamos todo a la izquierda */
+  padding: 0 20px; /* Padding horizontal */
+  margin-bottom: 20px;
+  height: fit-content; /* Ajustamos el alto para que se alinee con la portada */
+  padding-top: 0px;
+}
+
+/* Flecha a la izquierda */
+.contenedor-flecha {
+  display: flex;
+  align-items: center; /* Alineamos verticalmente */
+  justify-content: flex-start; /* Posicionamos la flecha a la izquierda */
+  margin-bottom: 5px; /* Espacio entre flecha y botones */
+  padding-left: 10px;
+  padding-top: 2px;
+}
+
+#otro {
+  font-size: 1.5rem; /* Tamaño más grande de la flecha */
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#otro:hover {
+  transform: scale(1.2); /* Efecto de aumento */
+  color: white; /* Color más llamativo */
+}
+
+/* Contenedor para los botones */
+.contenedor-botones {
+  display: flex;
+  gap: 15px; /* Espacio entre los botones */
+  justify-content: flex-start; /* Alineación a la izquierda */
+  margin-bottom: 15px; /* Espacio inferior del contenedor */
+  flex-wrap: wrap; /* Permite que los botones se acomoden en varias filas si no hay espacio */
+}
+
+/* Estilo de los botones */
+.boton-navbar {
+  background-color:#4a6896;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 1rem;
+}
+
+/* Efecto al pasar el cursor */
+.boton-navbar:hover {
+  transform: scale(1.1); /* Aumenta un poco el tamaño */
+  background-color: #395073; /* Cambia el color para el hover */
+}
+
+/* Estilo del botón activo */
+.boton-navbar.active {
+  background-color: #395073; /* Color para indicar que está seleccionado */
+  transform: scale(1.1); /* Mantiene el efecto de agrandado para el activo */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para resaltar el botón activo */
+}
+
+/* Responsividad para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .contenedor-botones {
+    justify-content: center; /* Centra los botones en pantallas pequeñas */
+    gap: 10px; /* Ajusta el espacio entre botones */
+  }
+
+  .boton-navbar {
+    font-size: 0.9rem; /* Reduce el tamaño de la fuente para pantallas más pequeñas */
+    padding: 8px 16px; /* Reduce el tamaño del padding */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contenedor-botones {
+    flex-direction: column; /* Coloca los botones en una columna para móviles */
+    align-items: center; /* Centra los botones */
+    gap: 10px; /* Ajusta el espacio entre botones */
+  }
+
+  .boton-navbar {
+    width: 100%; /* Los botones ocupan todo el ancho disponible */
+    max-width: 300px; /* Máximo ancho para evitar que sean demasiado grandes */
+    text-align: center; /* Centra el texto dentro de los botones */
+  }
+}
+
+
+
+
+/*CONTEDEDOR DE LIBROS */
+
+.contenedor-de-libros{
+  display: grid;
+  grid-template-columns: 0.35fr 0.75fr;
+  background-color: transparent;
+  column-gap: 20px;
+  padding:  0 4%;
+  
+
+
+gap: 20px;
+
+}
+
+@media (max-width: 768px) {
+  .contenedor-de-libros {
+    grid-template-columns: 2fr; /* Una columna en pantallas pequeñas */
+
+  }
+  
+}
+.contenedor-completo{
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0 auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  
+     flex-direction: column; /* Agregado */
+     justify-content: center; /* Agregado */
+     align-items: center; /* Agregado */
+     text-align: center;
+}
+
+.contenedor-completo:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.contenedor-portada {
+  width: 100%;
+  background-color: #f3f3f3;
+  max-height: 400px; /* Ajusta según sea necesario */
+  overflow: hidden; /* Oculta el contenido desbordado */
+}
+
+.imagen-portada {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen no se deforme */
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.contenedor-completo:hover .imagen-portada {
+  filter: brightness(1.1); /* Efecto de brillo al pasar el cursor */
+}
+
+.contenedor-titulo {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.2rem;
+  color: #333;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.5s ease;
+}
+
+
+.contenedor-completo:hover .contenedor-titulo {
+  background-color: #f5f5f5;
+}
+
+/* Responsividad para tablets y dispositivos pequeños */
+@media (max-width: 768px) {
+  .contenedor-completo {
+    max-width: 80%;
+  }
+
+  .contenedor-titulo {
+    font-size: 1rem; /* Ajusta el tamaño del texto del título en dispositivos más pequeños */
+  }
+}
+
+/* Responsividad para pantallas muy pequeñas (móviles) */
+@media (max-width: 480px) {
+  .contenedor-completo {
+    max-width: 90%;
+  }
+
+  .contenedor-titulo {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}
+
+.contenedor-DDR {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+}
+
+
+  .libro-audio {
+   display: flex; 
+   justify-content: center;
+  }
+  
+  
+  /*.libro-audio:hover {
+    opacity: 0.2; /* Ajusta el valor de opacidad entre 0 (transparente) y 1 (opaco) 
+  }*/
+  
+  
+  .btn-leer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1px; /* Ancho fijo del botón */
+    height: 30px; /* Alto fijo del botón */
+    background-color: transparent; /* Color de fondo */
+    color: black; /* Color del texto e icono */
+    font-size: 2rem; /* Tamaño del icono */
+    border: none;
+    border-radius: 45%; /* Hacer el botón redondo */
+    cursor: pointer;
+    position: relative; 
+    transition: background-color 0.3s ease, easetransform 0.3s ease; /* Efecto de transición suave */
+  }
+
+  .btn-leer:hover {
+    background-color: #e0e0e0; /* Cambia el color de fondo cuando el ratón está sobre el botón */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Efecto de sombra en hover */
+  }
+  
+  .btn-leer:active {
+    background-color: #d0d0d0; /* Cambia el color cuando el botón es clickeado */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra más pequeña al hacer clic */
+  }
+  
+  
+  .btn-leer:hover::after {
+    content: attr(title); /* Muestra el texto del atributo title */
+    position: absolute;
+    background-color: #656666;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+  
+
+
+  #otro1{
+    font-size: 35px; /* Tamaño del ícono */
+  color: #333; /* Color del ícono */
+  transition: transform 0.3s ease; /* Transición suave para agrandar */
+  }
+
+  .btn-leer:hover #otro1 {
+    transform: scale(1.2); /* Agranda el ícono un 20% cuando el ratón está sobre el botón */
+  }
+
+
+  .btn-leer:hover #otro1 {
+    transform: scale(1.2); /* Agranda el ícono un 20% cuando el ratón está sobre el botón */
+  }
+
+/*
+.contenedor-portada {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+}
+.contenedor-portada img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+/* Estilos para el título 
+.contenedor-titulo {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.contenedor-titulo h3 {
+  font-size: 2rem;
+}
+
+
+
+/* Media Queries para dispositivos móviles más pequeños *
+@media (max-width: 768px) {
+  .contenedor-titulo h1 {
+    font-size: 1.5rem;
+  }
+
+  .contenedor-portada img {
+    max-width: 250px;
+  }
+}
+
+
+*/
+
+.row{
+
+  background: transparent;
+}
+
+
+/*RESUMEN */
+
+
+.contenedor-title-resumen{
+background-color: #b1b091;
+border-radius: 10px;
+
+}
+.contenedor-title-resumen h1{
+
+  color: white;
+  text-align: center;
+
+
+}
+
+
+.scrollspy-example {
+  max-height: 400px; /* Ajusta la altura máxima del cuadro según tus necesidades */
+  overflow-y: scroll; /* Habilita el scroll vertical */
+  overflow-x: hidden; /* Esconde el scroll horizontal si no es necesario */
+  background-color: #d0d0bd;
+  padding: 20px;
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  border: 1px solid #ddd; /* Borde claro */
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: justify;
+  
+}
+
+/*DESCRIPCION*/
+
+.container-Descripcion{
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+  border: 5px solid transparent ;
+  margin: auto;
+  padding: 10px 0;
+  background-color: transparent;
+}
+
+.contenedor-title-descripcion{
+  background-color:  #b1b091;
+  border-radius: 10px;
+}
+.contenedor-title-descripcion h1{
+
+  color: white;
+  text-align: center;
+}
+.sip-obj-container{
+  width: 100%;
+  background-color: #E8E0C8;
+}
+.card-box{
+  flex: 1;  /* Hace que cada elemento ocupe el mismo espacio horizontal */
+  background-color: #d0d0bd;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px; 
+  border-color: black;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.card-box:hover {
+transform: translateY(-5px); /* Mueve la tarjeta ligeramente hacia arriba */
+background-color:#b1b091; /* Cambia a un azul más oscuro al pasar el cursor */
+}
+h2{
+
+  text-decoration-color: black;
+}
+
+
+
+/*DETALLES*/
+
+
+.contenedor-detalle {
+max-width: 1000px; /* Tamaño máximo para pantallas grandes */
+margin: 0 auto; /* Centra el contenedor */
+padding: 10px; /* Espaciado interno */
+}
+
+.contenedor-title-detalles {
+background-color: #b1b091;
+margin-bottom: 20px; /* Espacio debajo del título */
+border-radius: 10px;
+}
+
+.contenedor-title-detalles{
+
+  color: white;
+  text-align: center;
+}
+
+
+.contenedor-de-detalles {
+display: flex;
+flex-wrap: wrap; /* Permite que los elementos se ajusten en líneas si no hay suficiente espacio */
+gap: 20px; /* Espacio entre cada detalle */
+}
+
+.detalles-box {
+  width: 100%;
+flex: 1 1 100%; /* Cada detalle ocupará 45% del ancho y se ajustará si hay espacio disponible */
+background-color: #d0d0bd; 
+padding: 15px; /* Espaciado interno para todos los lados */
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+border-radius: 10px; /* Bordes redondeados */
+transition: transform 0.3s ease, background-color 0.3s ease; /* Suaviza la transición al pasar el cursor */
+color: #120d1a; /* Color del texto */
+}
+
+.detalles-box:hover {
+transform: translateY(-5px); /* Mueve la tarjeta ligeramente hacia arriba */
+background-color:#b1b091; /* Cambia a un azul más oscuro al pasar el cursor */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+.detalles-box {
+  flex: 1 1 100%; /* En pantallas pequeñas, cada detalle ocupará el 100% del ancho */
+}
+}
+
+
+/*--------------------TITULO DE AUDIOTEXTO-----------------------------*/
+
+
+.contenedor-audiotex{
+  padding-left : 2%;
+  padding-right: 2%;
+  
+
+
+}
+.titulo-del-audiolibro{
+  background-color: #4a6896;
+  border-radius: 15px;
+  text-align: center;
+  margin-top: 10px;
+
+
+  
+
+
+
+}
+
+.contenedor-textoaudio{
+
+  padding-left : 13%;
+  padding-right: 13%;
+ 
+}
+
+.scrollspy-textoaudio{
+  max-height: 700px; /* Ajusta la altura máxima del cuadro según tus necesidades */
+  overflow-y: scroll; /* Habilita el scroll vertical */
+  overflow-x: hidden; /* Esconde el scroll horizontal si no es necesario */
+  background-color: #978676;
+  
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  border: 1px solid #ddd; /* Borde claro */
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: justify;
+  margin-top: 25px; 
+
+
+}
+
+
+
+
+
+

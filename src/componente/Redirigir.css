@@ -1,0 +1,347 @@
+.restringir-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s;
+    width: 100%;
+    max-width: 1000px;
+    z-index: 1000;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.atras-restriccion {
+    background: #f9f9f9;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    justify-content:right;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    animation: slideDown 0.4s ease-out;
+    width: 100%;
+    max-width: 450px;
+    z-index: 1001;
+}
+
+.eliminar-modal {
+    background: #f9f9f9;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    animation: slideDown 0.4s ease-out;
+    width: 100%;
+    max-width: 450px;
+    z-index: 1001;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 5;
+    }
+}
+
+.tamaño-modal {
+    padding: 25px;
+    max-width: 550px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nombre-restricciones {
+    display: flex;
+    justify-content: space-between;
+    /* Esto separa los elementos y los posiciona en los extremos */
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+    border-bottom: 3px solid #818dcc;
+    padding-bottom: 5px;
+}
+
+
+.titulo-restriccion {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ed1c16;
+    text-align: end;
+}
+
+.cerrar-restriccion {
+    background: none;
+    border: none;
+    font-size: 3.5rem;
+    cursor: pointer;
+    color: #585757;
+    transition: color 0.3s;
+    justify-content: right;
+    align-items: first baseline;
+    transform: translateY(-45%);
+    font-size: 20px;
+}
+
+#cerrar-restriccion {
+    font-size: 30px;
+    /* Ajusta el tamaño del ícono */
+    cursor: pointer;
+    /* Hace que el ícono sea clickeable */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: black;
+    transform: translateY(-45%);
+}
+
+.cerrar-restriccion:hover {
+    color: #444;
+}
+
+.redirigir-botones {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.Ir-login,
+.Ir-registro {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.Ir-login {
+    background-color: #004B93;
+    color: #fff;
+}
+
+.Ir-login:hover {
+    background-color: #7982b7;
+    transform: translateY(-2px);
+}
+
+.Ir-registro {
+    background-color: #004B93;
+    color: #fff;
+}
+
+.Ir-registro:hover {
+    background-color: #7982b7;
+    transform: translateY(-2px);
+}
+
+.confirmar-eliminar,
+.cancelar-eliminar {
+    background-color: #004B93;
+    color: #fff;
+}
+
+.confirmar-eliminar:hover,
+.cancelar-eliminar:hover {
+    background-color: #7982b7;
+}
+
+@media (max-width: 768px) {
+    .atras-restriccion {
+        padding: 5px;
+    }
+
+    .restringir-modal {
+        padding: 1px;
+    }
+
+    .tamaño-modal {
+        padding: 2px;
+    }
+
+    .nombre-restricciones {
+        padding: 3px;
+        margin-bottom: 6px;
+    }
+
+    #titulo-restriccion {
+        font-size: 1.5rem;
+        left: 10px;
+        transform: translateX(10%);
+        text-align: end;
+    }
+
+    .modal-body {
+        padding: 4px;
+    }
+
+    .redirigir-botones {
+        padding: 3px;
+    }
+
+    .cerrar-restriccion {
+        transform: translateY(-5%);
+    }
+
+    .contenedor-orden {
+        flex-direction: column;
+        /* Cambia a columna en pantallas más pequeñas */
+        align-items: center;
+    }
+
+    .drown-ordenar {
+        /* Asegura que el botón ocupe todo el ancho */
+        padding: 10px;
+        font-size: 16px;
+        /* Ajusta el tamaño del texto para móviles */
+    }
+
+    #flecha-orden {
+        margin-left: 10px;
+        /* Espacio entre el texto y el icono en móviles */
+    }
+
+    .dropdown-menu {
+        max-width: 90px;
+        text-align: center;
+    }
+
+    .orden-item {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .atras-restriccion {
+        padding: 2px;
+    }
+
+    .restringir-modal {
+        padding: 1px;
+    }
+
+    .tamaño-modal {
+        padding: 2px;
+    }
+
+    .nombre-restricciones {
+        padding: 10px;
+    }
+
+    .cerrar-restriccion {
+        transform: translateY(-5%);
+    }
+
+    .modal-body {
+        padding: 3px;
+    }
+
+    .redirigir-botones {
+        padding: 3px;
+    }
+
+    .drown-ordenar {
+        padding: 8px;
+        font-size: 14px;
+        /* Reduce el tamaño del texto aún más en pantallas muy pequeñas */
+    }
+
+    .orden-item {
+        padding: 8px;
+    }
+}
+
+
+/*--------------------------------------------------------ORDEN--------------------------------------------------------------------------------*/
+.contenedor-orden {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.boton-orden {
+    display: flex;
+    width: 100%;
+    justify-content: right;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.drown-ordenar {
+    background-color: #346396;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 200px;
+}
+
+.drown-ordenar:hover {
+    background-color: #0d3867;
+}
+
+#flecha-orden {
+    color: #f9f9f9;
+}
+
+#otro-ordenar {
+    color: #444;
+    font-size: 1.5rem;
+}
+
+.dropdown-menu {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #dcf4f5;
+    width: 100%;
+    max-width: 120px;
+    max-height: 30px;
+}
+
+.orden-texto {
+    margin-right: 10px;
+    /* Espacio entre el texto y el icono */
+    color: #fff;
+}
+
+.orden-item {
+    display: block;
+    padding: 10px 20px;
+    background-color: #dcf4f5;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.orden-item:hover {
+    background-color: #a8dadc;
+    color: #0056b3;
+}

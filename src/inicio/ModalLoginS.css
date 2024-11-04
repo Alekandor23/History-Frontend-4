@@ -1,0 +1,82 @@
+/* ModalLoginS.css */
+.modal-overlay-login {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    /* Más oscuro para mejor contraste */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content-login {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 0.5s ease;
+    /* Añadir animación para suavidad */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes buttonBounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.modal-message-login {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+.modal-button-login {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 100px;
+    background-color: #001745;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* Añadir transición para suavidad */
+}
+
+.modal-button-login:hover {
+    background-color: #457b9d;
+    animation: buttonBounce 0.5s ease;
+    /* Añadir animación de rebote */
+}

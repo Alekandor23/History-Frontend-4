@@ -1,0 +1,298 @@
+/* Estilos del modal */
+.comentario-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 781px;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  margin: auto;
+}
+
+.comentario-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%; /* Ajusta el ancho del modal */
+  max-width: 1000px;  /* Ancho máximo */
+  height: 530px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  overflow-y: auto; /* Añadido para manejar contenido grande */
+  transform: translateY(5%); /* Asegura que no sobrepase la altura de la ventana */
+  justify-content: left;
+}
+
+#cerrar-comentario {
+  font-size: 30px; /* Ajusta el tamaño del ícono */
+  cursor: pointer; /* Hace que el ícono sea clickeable */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: black; /* Asegura que el color sea negro */
+}
+
+.comentario-contenedor {
+  display: flex;
+  flex-direction: column;
+  border: none; /* Eliminamos el borde negro */
+  border-radius: 20px;
+  transform: translateY(15%);
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  justify-content: flex-start;
+  align-content: space-between;
+  margin-bottom: 20px; /* Añadimos un margen para el espacio entre comentarios */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agregamos una sombra para sustituir el borde */
+  padding: 15px; /* Añadimos padding interno para que el contenido no esté pegado a los bordes */
+  background-color: #eaf4fe;
+}
+
+.comentario-principal{
+  display: flex;
+  flex-direction: column;
+  border: none; /* Eliminamos el borde negro */
+  border-radius: 20px;
+  transform: translateY(15%);
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  justify-content: flex-start;
+  align-content: space-between;
+  margin-bottom: 20px; /* Añadimos un margen para el espacio entre comentarios */
+  border: 2px solid black;
+  box-shadow: none; /* Quitamos la sombra */
+  padding: 15px; /* Añadimos padding interno para que el contenido no esté pegado a los bordes */
+  background-color: #eaf4fe;
+}
+
+.titulo-reseña {
+  font-size: 20px; /* Reducir el tamaño de la fuente */
+  position: absolute; /* Posicionarlo de forma absoluta */
+  top: 10px; /* Ajustar para moverlo hacia abajo desde el borde superior */
+  left: 20px; /* Alinearlo a la derecha con un margen de 20px */
+  font-weight: bold; /* Hacer que el título no sea tan grueso, si lo prefieres */
+  text-align: left;
+  padding-top: 5px;
+  color: #5a63b8;
+}
+
+.bi-person-circle, #circulo-user {
+  color: #777ec4;
+}
+
+#circulo-user {
+  font-size: 2.1rem; /* Tamaño del icono */
+  padding: 5px; /* Ajustar para moverlo hacia abajo desde el borde superior */
+}
+
+.usuario-comentario {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.usuario-comentario p {
+  margin: 0;
+  font-size: 16px;
+  margin-bottom: 10px; /* Espacio entre el texto y las estrellas */
+  transform: translateY(29%);
+}
+
+.rating {
+  display: flex;
+  justify-content: left;
+  gap: 5px;
+  padding: 15px;
+  transform: translateY(20%);
+}
+
+.rating label {
+  margin-right: 5px; /* Espacio entre las estrellas */
+}
+
+.rating input {
+  display: none;
+}
+
+.star {
+  cursor: pointer;
+  transition: color 200ms;
+}
+
+.rating label:hover .star,
+.rating label:hover ~ label .star {
+  color: gold;
+}
+
+.escribir-contenedor {
+  display: flex;
+  border: none;
+  flex-direction: column;
+  width: 100%;
+}
+
+.escribir-control {
+  display: flex;
+  border: none;
+  border-bottom: 2px solid rgba(154, 173, 225, 0.726);
+  background-color: transparent;
+  padding: 5px;
+  font-size: 12px;
+  width: 100%;
+  max-width: 750px;
+  margin-bottom: 10px;
+}
+
+.escribir-control::placeholder {
+  color: rgba(19, 20, 20, 0.845);
+}
+
+.escribir-control:hover {
+  background-color: #c7c9db;
+  border-radius: 1px solid #999dbd;
+}
+
+.escribir-control:focus {
+  outline: none;
+  border-bottom-color: rgba(172, 192, 225, 0.9);
+}
+
+.botones-contenedor {
+  display: flex;
+  gap: 10px; /* Espacio entre los botones */
+  margin-top: 10px; /* Espacio entre el input y los botones */
+  justify-content: right;
+  margin-bottom: 10px;
+}
+
+.btn-cancelar,
+.btn-publicar {
+  padding: 5px 10px;
+  border: 50px;
+  background-color: #234489;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-cancelar:hover,
+.btn-publicar:hover {
+  background-color: #a19bc3;
+}
+
+@media (max-width: 768px) {
+  .comentario-content {
+    width: 90%;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .comentario-contenedor {
+    padding: 2px;
+    max-width: 100%;
+  }
+
+  .titulo-reseña {
+    font-size: 1.2em;
+  }
+
+  .rating i {
+    font-size: 24px;
+  }
+
+  .escribir-contenedor {
+    padding: 2px;
+    max-width: 100%;
+  }
+
+  .escribir-control {
+    font-size: 14px;
+  }
+
+  .botones-contenedor {
+    padding: 2px;
+    max-width: 100%;
+  }
+
+  .btn-cancelar,
+  .btn-publicar {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .comentario-content {
+    padding: 5px;
+  }
+
+  .comentario-contenedor {
+    padding: 2px;
+    max-width: 100%;
+  }
+
+  .titulo-reseña {
+    font-size: 1em;
+  }
+
+  .rating {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .escribir-contenedor {
+    padding: 2px;
+    max-width: 100%;
+  }
+
+  .escribir-control {
+    font-size: 12px;
+  }
+
+  .botones-contenedor {
+    padding: 2px;
+    max-width: 100%;
+  }
+
+  .btn-cancelar,
+  .btn-publicar {
+    font-size: 12px;
+    padding: 6px;
+  }
+}
+.link-text{
+  color: #3260dd;
+  text-decoration: underline;
+
+
+}
+/* Estilos del mensaje */
+.message {
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
